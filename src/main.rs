@@ -10,12 +10,27 @@ use std::collections::HashMap;
 
 
 fn main() {
-     fn use_func<T>(a: i32, b: i32, func: T) -> i32 
-     where T: Fn(i32, i32) -> i32 {
-        func(a,b)
-     }
-     let sum = |a: i32, b: i32| a+b;
-     let prod = |a: i32, b: i32| a*b;
-     println!("5 + 4 = {}", use_func(5, 4, sum));
-     println!("5 * 4 = {}", use_func(5, 4, prod));
+    struct TreeNode<T> {
+        pub left: Option<Box<TreeNode<T>>>,
+        pub right: Option<Box<TreeNode<T>>>,
+        pub key: T,
+    }
+
+    impl<T> TreeNode<T> {
+        pub fn new(key: T) -> Self {
+            TreeNode { left: None, right: None, key }
+        }
+        pub fn left(mut self, node: TreeNode<T>) -> Self {
+            self.left = Some(Box::new(node));
+            self
+        }
+        pub fn right(mut self, node: TreeNode<T>) -> Self {
+            self.right = Some(Box::new(node));
+            self
+        }
+
+    }
+
+    let node1 = TreeNode::new(1).left(TreeNode::new(2)).right(TreeNode::new(3));
+    
 }
