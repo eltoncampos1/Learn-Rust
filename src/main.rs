@@ -6,23 +6,16 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 
-fn main() {
-   let vec1: Vec<i32> = Vec::new();
-   let mut vec2 = vec![1,2,3,4];
-   vec2.push(5);
-   println!("1st: {}", vec2[0]);
-   let second: &i32 = &vec2[1];
-   match vec2.get(1) {
-    Some(second) => println!("2nd: {}", second),
-    None => println!("No 2nd value"),
-   }
-   for i in &mut vec2 {
-    *i *= 2;
-   }
-   for i in &vec2 {
-    println!("{}", i);
-   }
+fn sum_list(list: &[i32]) -> i32 {
+    let mut sum = 0;
+    for &val in list.iter() {
+        sum += &val;
+    }
 
-   println!("Vec len: {}", vec2.len());
-   println!("POP: {:?}", vec2.pop());
+    return sum;
+}
+
+fn main() {
+   let list = vec![1,2,3,4,5];
+   println!("Sum: {}", sum_list(&list))
 }
