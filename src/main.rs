@@ -10,11 +10,14 @@ use std::collections::HashMap;
 
 
 fn main() {
-   let mut arr_it = [1,2,3,4,5];
-   for val in arr_it.iter() {
-    println!("{}", val);
-   }
+ let mut samp1 = 5;
+ let print_var = || println!("samp1  = {}", samp1);
+ print_var();
+ samp1 = 10;
+ let mut change_var = || samp1 +=1;
+ change_var();
+ println!("samp1 = {} ", samp1);
+ samp1 = 10;
 
-   let mut iter1 = arr_it.iter();
-   println!("1st: {:?}", iter1.next());
+ println!("samp1 = {} ", samp1);
 }
