@@ -7,12 +7,8 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-  let my_age  = 18;
-  let voting_age = 18;
-
-  match my_age.cmp(&voting_age) {
-    Ordering::Less => println!("Cant Vote"),
-    Ordering::Greater => println!("Cant Vote"),
-    Ordering::Equal => println!("Can Vote"),
-  };
+  let arr_1 = [1,2,3,4,5,6,7,8,9];
+  println!("First: {}", arr_1[0]);
+  println!("length: {}", arr_1.len());
+    
 }
