@@ -7,12 +7,21 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 
-fn get_sum_gen<T: Add<Output = T>>(x: T, y: T) -> T {
-    return x + y;
+fn print_str(x: String) {
+    println!("A string: {}", x)
+}
+
+fn print_and_return_str(x: String) -> String {
+    println!("A string: {}", x);
+    return x;
+}
+
+fn change_str(name: &mut String) {
+    name.push_str(" is happy!");
+    println!("Message: {}", name);
 }
 
 fn main() {
-   let str1 = String::from("Hello");
-   let str2 = str1.clone();
-   println!("Hello {}", str1)
+   let mut str1 = String::from("Foo");
+   change_str(&mut str1);
 }
