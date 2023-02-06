@@ -12,6 +12,7 @@ fn get_sum_gen<T: Add<Output = T>>(x: T, y: T) -> T {
 }
 
 fn main() {
-   println!("Sum: {}", get_sum_gen(5.3, 4.8));
-   println!("Sum: {}", get_sum_gen(5, 4));
+   let str1 = String::from("Hello");
+   let str2 = str1.clone();
+   println!("Hello {}", str1)
 }
