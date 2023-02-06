@@ -7,10 +7,13 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-  let my_tp: (u8, String, f64) = (47, "foo".to_string(), 50_000.00); 
+ let mut st1 = String::new();
+ st1.push('A');
+ st1.push_str(" word");
+ for word in st1.split_whitespace() {
+    println!("{}", word);
+ }
 
-  println!("Name: {}", my_tp.1);
-  let(v1, v2, v3) = my_tp;
-  println!("Age: {}", v1);
-
+ let st2 = st1.replace("A", "Another");
+ println!("{}", st2);
 }
