@@ -7,6 +7,12 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-    let is_true = true;
-    let my_grade = 'A';
+    let num_3: u32 = 5;
+    let num_4: u32 = 4;
+    println!("5 + 4 = {}", num_3 + num_4);
+    println!("5 - 4 = {}", num_3 - num_4);
+    println!("5 * 4 = {}", num_3 * num_4);
+    println!("5 / 4 = {}", num_3 / num_4);
+    println!("5 % 4 = {}", num_3 % num_4);
+
 }
