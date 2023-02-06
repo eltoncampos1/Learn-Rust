@@ -7,11 +7,12 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-  let age2 = 8;
-  match age2 {
-    1..=18 => println!("Important Bday"),
-    21 | 50 => println!("Important Bday"),
-    65..=i32::MAX => println!("Important Bday"),
-    _ => println!("NOT an Important Bday"),
+  let my_age  = 18;
+  let voting_age = 18;
+
+  match my_age.cmp(&voting_age) {
+    Ordering::Less => println!("Cant Vote"),
+    Ordering::Greater => println!("Cant Vote"),
+    Ordering::Equal => println!("Can Vote"),
   };
 }
